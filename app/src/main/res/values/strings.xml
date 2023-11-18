@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Compras</string>
+    <string name="producto">Producto</string>
+    <string name="cantidad">Catidad</string>
+    <string name="comprar">Comprar</string>
+    <string name="estanteria">Estanteria</string>
+    <string name="almacenado">Almacenado</string>
+    <string name="borrar">Borrar</string>
 </resources>
