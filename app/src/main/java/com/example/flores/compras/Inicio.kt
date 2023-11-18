@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +28,7 @@ class Inicio : AppCompatActivity() {
 
         mediaPlayer = MediaPlayer.create(this, R.raw.precionar)
 
+        recyclerView = findViewById<RecyclerView>(R.id.Lista_p)
         initRecyclerView()
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -36,7 +38,10 @@ class Inicio : AppCompatActivity() {
     private fun agregar() {
         // Implementar lógica para agregar
         mediaPlayer.start()
-        val item = Lista_Compras("Producto","Cantidad")
+        val nombreProducto = getString(R.string.producto)
+        val cantidadProducto = getString(R.string.cantidad)
+        val precioProducto = getString(R.string.precio)
+        val item = Lista_Compras(nombreProducto,cantidadProducto,precioProducto)
         Lista_C.add(item)
         recyclerView.adapter?.notifyDataSetChanged()
     }
