@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Purchases</string>
+    <string name="producto">Product:</string>
+    <string name="precio">Price:</string>
+    <string name="cantidad">Quantity:</string>
+    <string name="comprar">Buy</string>
+    <string name="estanteria">Shelf</string>
+    <string name="almacenado">Stored</string>
+    <string name="borrar">Delete</string>
+    <string name="guardar">Save</string>
+    <string name="cambiar">Change language</string>
+    <string name="agregar">Add</string>
+</resources>

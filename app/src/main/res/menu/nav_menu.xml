@@ -5,13 +5,13 @@
     <item
         android:id="@+id/Guardar"
         android:icon="@drawable/baseline_save_24"
-        android:title="Guardar"
+        android:title="@string/guardar"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_agregar"
-        android:title="Agregar"/>
+        android:title="@string/agregar"/>
     <item
         android:id="@+id/menu_cambiar_idioma"
-        android:title="Cambiar Idioma"/>
+        android:title="@string/cambiar"/>
 
 </menu>

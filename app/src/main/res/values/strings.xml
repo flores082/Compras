@@ -7,4 +7,7 @@
     <string name="estanteria">Estanteria</string>
     <string name="almacenado">Almacenado</string>
     <string name="borrar">Borrar</string>
+    <string name="guardar">Guardar</string>
+    <string name="cambiar">Cambiar Idioma</string>
+    <string name="agregar">Agregar</string>
 </resources>

@@ -12,8 +12,9 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flores.compras.ViewHolder.Lista_Compras
+import com.example.flores.compras.adapter.Lista_Compras
 import com.example.flores.compras.adapter.Agregar_producto
+import java.util.Locale
 
 class Inicio : AppCompatActivity() {
 
@@ -21,11 +22,12 @@ class Inicio : AppCompatActivity() {
 
     var Lista_C = mutableListOf<Lista_Compras>()
     lateinit var recyclerView:RecyclerView
+
+    private var idiomaActual: String = "es"
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
-
         mediaPlayer = MediaPlayer.create(this, R.raw.precionar)
 
         recyclerView = findViewById<RecyclerView>(R.id.Lista_p)
@@ -49,12 +51,23 @@ class Inicio : AppCompatActivity() {
     private fun guardar() {
         // Implementar lógica para guardar
         mediaPlayer.start()
-        Toast.makeText(this,"Guardado",Toast.LENGTH_SHORT).show()
+        val guardarProducto = getString(R.string.guardar)
+        Toast.makeText(this,guardarProducto,Toast.LENGTH_SHORT).show()
     }
 
     private fun cambiarIdioma() {
         mediaPlayer.start()
         // Implementar lógica para cambiar el idioma
+        idiomaActual = if (idiomaActual == "es") {
+            // Si el idioma actual es español, cambiar a inglés
+            actualizarIdioma("en")
+            "en"
+        } else {
+            // Si el idioma actual no es español (puede ser inglés u otro), cambiar a español
+            actualizarIdioma("es")
+            "es"
+        }
+
     }
     @SuppressLint("ResourceType")
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -84,5 +97,16 @@ class Inicio : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = Agregar_producto(Lista_C)
         recyclerView.adapter = adapter
+    }
+    private fun actualizarIdioma(idioma: String){
+        val recursos = resources
+        val displayMetrics = recursos.displayMetrics
+        val configuracion = resources.configuration
+        configuracion.setLocale(Locale(idioma))
+        recursos.updateConfiguration(configuracion, displayMetrics)
+        configuracion.locale = Locale(idioma)
+        resources.updateConfiguration(configuracion, displayMetrics)
+
+        recreate()
     }
 }
