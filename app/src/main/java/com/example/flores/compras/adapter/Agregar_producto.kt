@@ -44,11 +44,11 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>): RecyclerView
 
             colorSwitch.setOnCheckedChangeListener{_,isChecked ->
                 if(isChecked){
-
+                    itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Purple))
                 }
                 else
                 {
-
+                    itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.white))
                 }
             }
             itemView.findViewById<Button>(R.id.button1).setOnClickListener {
