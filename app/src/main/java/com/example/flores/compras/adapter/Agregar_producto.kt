@@ -13,8 +13,9 @@ import android.widget.Toast
 
 data class Lista_Compras(
     val producto: String,
+    val precio: String,
     val cantidad: String,
-    val precio: String
+    val marca: String
 )
 
 class Agregar_producto(private val LC: MutableList<Lista_Compras>): RecyclerView.Adapter<Agregar_producto.Producto>(){
@@ -36,11 +37,12 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>): RecyclerView
 
     inner class Producto(itemView: View):RecyclerView.ViewHolder(itemView){
         fun bind(producto:Lista_Compras) {
-            itemView.findViewById<TextView>(R.id.textView).text = producto.producto
-            itemView.findViewById<TextView>(R.id.textView2).text = producto.cantidad.toString()
-            itemView.findViewById<TextView>(R.id.textView3).text = producto.precio.toString()
+            itemView.findViewById<TextView>(R.id.textView2).text = producto.producto
+            itemView.findViewById<TextView>(R.id.textView3).text = producto.precio
+            itemView.findViewById<TextView>(R.id.textView4).text = producto.cantidad
+            itemView.findViewById<TextView>(R.id.textView5).text = producto.marca.toString()
 
-            colorSwitch = itemView.findViewById(R.id.switch1)
+            /*colorSwitch = itemView.findViewById(R.id.switch1)
 
             colorSwitch.setOnCheckedChangeListener{_,isChecked ->
                 if(isChecked){
@@ -50,8 +52,8 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>): RecyclerView
                 {
                     itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.white))
                 }
-            }
-            itemView.findViewById<Button>(R.id.button1).setOnClickListener {
+            }*/
+            /*itemView.findViewById<Button>(R.id.button1).setOnClickListener {
                 // Lógica para borrar el producto de la lista
                 val borrarProducto = itemView.context.getString(R.string.borrar)
                 Toast.makeText(itemView.context,borrarProducto, Toast.LENGTH_SHORT).show()
@@ -62,7 +64,7 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>): RecyclerView
                     LC.removeAt(posicion)
                     notifyDataSetChanged()
                 }
-            }
+            }*/
         }
     }
 }

@@ -10,4 +10,7 @@
     <string name="guardar">Guardar</string>
     <string name="cambiar">Cambiar Idioma</string>
     <string name="agregar">Agregar</string>
+    <string name="lista">Ir a lista</string>
+    <string name="editar">Editar</string>
+    <string name="marca">Marca:</string>
 </resources>

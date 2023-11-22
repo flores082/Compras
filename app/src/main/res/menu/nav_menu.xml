@@ -3,15 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/Guardar"
-        android:icon="@drawable/baseline_save_24"
-        android:title="@string/guardar"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/menu_ir_a_lista"
+        android:title="@string/lista"/>
     <item
-        android:id="@+id/menu_agregar"
-        android:title="@string/agregar"/>
-    <item
-        android:id="@+id/menu_cambiar_idioma"
+        android:id="@+id/idioma"
         android:title="@string/cambiar"/>
+
 
 </menu>
