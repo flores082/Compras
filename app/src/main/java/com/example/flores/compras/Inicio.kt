@@ -35,24 +35,7 @@ class Inicio : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
-        // Obtén el color del archivo colors.xml
-        val colorBackground = ContextCompat.getColor(this, R.color.Blue)
-
-        // Establece el color de fondo de la vista principal (puedes cambiar "miConstraintLayout" al ID de tu vista principal)
-        findViewById<View>(R.id.relativeLayout).setBackgroundColor(colorBackground)
-
-
         mediaPlayer = MediaPlayer.create(this, R.raw.precionar)
-
-        /*switch.setOnClickListener {
-            if (switch.isChecked) {
-                mediaPlayer.start()
-                LocaleHelper.setLocale(this, "en")
-            }
-            else{
-                LocaleHelper.setLocale(this, "es")
-            }
-        }*/
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -75,14 +58,6 @@ class Inicio : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
-            R.id.idioma -> {
-                mediaPlayer.start()
-                toggleLanguage()
-                val newLanguage = if (isSpanish) "es" else "en"
-                changeLanguage(this, newLanguage)
-                recreate()
-                return true
-            }
             else -> return super.onOptionsItemSelected(item)
         }
     }
@@ -92,42 +67,4 @@ class Inicio : AppCompatActivity() {
         val adapter = Agregar_producto(Lista_C)
         recyclerView.adapter = adapter
     }*/
-    /*object LocaleHelper{
-        fun setLocale(context: Context, language: String){
-            val newLocale = Locale(language)
-            Locale.setDefault(newLocale)
-            val resources = context.resources
-            val configuration = Configuration(resources.configuration)
-            configuration.setLocale(newLocale)
-            resources.updateConfiguration(configuration, resources.displayMetrics)
-            configuration.locale = newLocale
-            resources.updateConfiguration(configuration, resources.displayMetrics)
-
-            /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
-                configuration.setLocale(newLocale)
-            }
-            else{
-                configuration.locale = newLocale
-            }
-
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
-                context.createConfigurationContext(configuration)
-            }
-            else {
-                resources.updateConfiguration(configuration, resources.displayMetrics)
-            }*/
-
-            (context as Activity).recreate()
-        }
-    }*/
-    private fun changeLanguage(context: Context, language: String) {
-        val newlocale = Locale(language)
-        Locale.setDefault(newlocale)
-
-        val configuration = Configuration()
-        configuration.setLocale(newlocale)
-
-        val resources = context.resources
-        resources.updateConfiguration(configuration, resources.displayMetrics)
-    }
 }

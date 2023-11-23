@@ -14,12 +14,12 @@ class Biemvenida : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_biemvenida)
         mediaPlayer = MediaPlayer.create(this, R.raw.inicio)
+        mediaPlayer.start()
         VerBienvenida()
     }
     fun VerBienvenida() {
         object : CountDownTimer(2000, 1000) {
             override fun onTick(p0: Long) {
-                mediaPlayer.start()
             }
             override fun onFinish() {
                 mediaPlayer.release()
