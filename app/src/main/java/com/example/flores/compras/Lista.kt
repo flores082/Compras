@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -20,15 +21,18 @@ class Lista : AppCompatActivity() {
 
     private lateinit var Lista : MutableList<Lista_Compras>
     private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: Agregar_producto
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista)
 
+        Lista = mutableListOf()
         recyclerView = findViewById<RecyclerView>(R.id.Lista_p)
-
-        //initRecyclerView()
+        adapter = Agregar_producto(Lista)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -40,31 +44,27 @@ class Lista : AppCompatActivity() {
         return true
     }
 
+    @SuppressLint("WrongViewCast")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.Guardar -> {
                 return true
             }
             R.id.menu_agregar -> {
-
-                val item = Lista_Compras(
-                        "Producto:",
-                "Precio$:",
-                    "Cantidad:",
-                "Marca:"
+                val intent = Intent(this@Lista, Producto_agregado::class.java)
+                startActivity(intent)
+                /*val item = Lista_Compras(
+                        "Producto:"+findViewById<RecyclerView>(R.id.editTextText),
+                "Precio$:"+findViewById<RecyclerView>(R.id.editTextNumber),
+                    "Cantidad:"+findViewById<RecyclerView>(R.id.editTextNumber2),
+                "Marca:"+findViewById<RecyclerView>(R.id.editTextText2)
                 )
                 Lista.add(item)
-                recyclerView.adapter?.notifyDataSetChanged()
+                adapter.notifyDataSetChanged()*/
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
         }
-    }
-    @SuppressLint("WrongViewCast")
-    private fun initRecyclerView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.Lista_p)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = Agregar_producto(Lista)
     }
 
 }

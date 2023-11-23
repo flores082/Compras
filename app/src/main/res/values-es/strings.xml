@@ -1,17 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Compras</string>
-    <string name="producto">Producto:</string>
-    <string name="precio">Precio:</string>
-    <string name="cantidad">Catidad:</string>
+    <string name="producto">Producto</string>
+    <string name="precio">Precio</string>
+    <string name="cantidad">Catntidad:</string>
     <string name="comprar">Comprar</string>
     <string name="estanteria">Estanteria</string>
     <string name="almacenado">Almacenado</string>
     <string name="borrar">Borrar</string>
     <string name="guardar">Guardar</string>
-    <string name="cambiar">Cambiar Idioma</string>
+    <string name="cambiar">Cambiar idioma</string>
     <string name="agregar">Agregar</string>
-    <string name="lista">Ir a lista</string>
+    <string name="lista">Lista</string>
     <string name="editar">Editar</string>
-    <string name="marca">Marca:</string>
+    <string name="marca">Marca</string>
     <string name="tipo">Tipo</string>
 </resources>

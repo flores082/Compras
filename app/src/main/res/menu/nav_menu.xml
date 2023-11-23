@@ -5,9 +5,6 @@
     <item
         android:id="@+id/menu_ir_a_lista"
         android:title="@string/lista"/>
-    <item
-        android:id="@+id/idioma"
-        android:title="@string/cambiar"/>
 
 
 </menu>
