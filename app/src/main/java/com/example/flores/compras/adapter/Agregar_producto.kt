@@ -1,13 +1,21 @@
 package com.example.flores.compras.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
+import com.example.flores.compras.Lista
+import com.example.flores.compras.Lista.Companion.REQUEST_CODE_EDIT_PRODUCTO
+import com.example.flores.compras.Producto_agregado
 import com.example.flores.compras.R
+import java.io.Serializable
+import java.util.Collections
 
 data class Lista_Compras(
     val producto: String,
@@ -15,7 +23,7 @@ data class Lista_Compras(
     val cantidad: String,
     val marca: String,
     var cambio: Int
-)
+): Serializable
 
 class Agregar_producto(private val LC: MutableList<Lista_Compras>):
     RecyclerView.Adapter<Agregar_producto.ProductoViewHolder>(){
@@ -37,6 +45,12 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>):
     inner class ProductoViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val imageViewProducto = itemView.findViewById<ImageView>(R.id.imageView3)
         val colorSwitch = itemView.findViewById<Switch>(R.id.switch1)
+
+        val deleteButton = itemView.findViewById<Button>(R.id.button_borrar)
+        val editButton = itemView.findViewById<Button>(R.id.button_editar)
+
+        val Up = itemView.findViewById<Button>(R.id.Up)
+        val Down = itemView.findViewById<Button>(R.id.Down)
         fun bin(producto: Lista_Compras) {
             itemView.findViewById<TextView>(R.id.textView).text = producto.producto
             itemView.findViewById<TextView>(R.id.textView6).text = producto.precio
@@ -53,12 +67,48 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>):
                 }
             }
 
+            deleteButton.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    Lista.ListaComprasSingleton.getList().removeAt(position)
+                    notifyItemRemoved(position)
+                }
+            }
+
+            editButton.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val intent = Intent(itemView.context, Producto_agregado::class.java)
+                    intent.putExtra("producto", producto)
+                    intent.putExtra("position", position)
+                    (itemView.context as Activity).startActivityForResult(
+                        intent,
+                        REQUEST_CODE_EDIT_PRODUCTO
+                    )
+                }
+            }
+
             colorSwitch.setOnCheckedChangeListener { _, isChecked ->
                 if(isChecked){
                     itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Green))
                 }
                 else{
                     itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Red))
+                }
+            }
+
+            Up.setOnClickListener{
+                val position = adapterPosition
+                if (position > 0) {
+                    Collections.swap(LC, position, position - 1)
+                    notifyItemMoved(position, position - 1)
+                }
+            }
+            Down.setOnClickListener{
+                val position = adapterPosition
+                if (position < LC.size - 1) {
+                    Collections.swap(LC, position, position + 1)
+                    notifyItemMoved(position, position + 1)
                 }
             }
         }

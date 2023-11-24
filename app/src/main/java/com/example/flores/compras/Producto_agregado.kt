@@ -1,6 +1,7 @@
 package com.example.flores.compras
 
 import android.app.Activity
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,9 +45,14 @@ class Producto_agregado : AppCompatActivity() {
             val item = Lista_Compras(producto, precio, cantidad, marca, cambio)
             Lista.ListaComprasSingleton.addToList(item)
 
+            val intent = Intent()
+            intent.putExtra("editedProducto", item)
+            intent.putExtra("position", intent.getIntExtra("position", -1))
+            setResult(Activity.RESULT_OK, intent)
 
             listaChangeListener?.onListaChanged(ChangeType.ITEM_ADDED)
             mediaPlayer.start()
+
             setResult(Activity.RESULT_OK)
             finish()
         }

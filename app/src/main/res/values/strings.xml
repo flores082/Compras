@@ -21,4 +21,6 @@
         las características que se dan al fondo.</string>
     <string name="verde">-> Marca que tiene que comprarse</string>
     <string name="rojo">-> Marca que esta en el estante</string>
+    <string name="arriba">Arriba</string>
+    <string name="abajo">Abajo</string>
 </resources>

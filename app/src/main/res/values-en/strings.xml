@@ -21,4 +21,6 @@
         the characteristics that are given to the background.</string>
     <string name="verde">-> Brand that has to be purchased</string>
     <string name="rojo">-> Brand that is on the shelf</string>
+    <string name="arriba">Up</string>
+    <string name="abajo">Down</string>
 </resources>

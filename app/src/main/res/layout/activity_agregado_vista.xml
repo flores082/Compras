@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/Red">
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="130dp"
-        android:layout_height="181dp"
+        android:layout_height="226dp"
         android:layout_marginStart="4dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,18 +30,27 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="107dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="13dp"
             tools:srcCompat="@drawable/baseline_emoji_food_beverage_24" />
+
+        <Button
+            android:id="@+id/button_borrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Blue"
+            android:text="@string/borrar" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="282dp"
-        android:layout_height="176dp"
+        android:layout_width="181dp"
+        android:layout_height="226dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
@@ -73,5 +82,40 @@
             android:gravity="center"
             android:text="TextView" />
 
+        <Button
+            android:id="@+id/button_editar"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Blue"
+            android:text="@string/editar" />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="94dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078">
+
+        <Button
+            android:id="@+id/Up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Blue"
+            android:text="@string/arriba" />
+
+        <Button
+            android:id="@+id/Down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/Blue"
+            android:text="@string/abajo" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

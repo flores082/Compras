@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,8 +19,6 @@ import com.example.flores.compras.adapter.Lista_Compras
 class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Agregar_producto
-
-    //private lateinit var itemTouchHelper: ItemTouchHelper
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,16 +84,23 @@ class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
         if (requestCode == REQUEST_CODE_PRODUCTO_AGREGADO && resultCode == Activity.RESULT_OK) {
             // Actualiza la lista según sea necesario
             adapter.notifyDataSetChanged()
+        }else if (requestCode == REQUEST_CODE_EDIT_PRODUCTO && resultCode == Activity.RESULT_OK) {
+            // Producto editado
+            val position = data?.getIntExtra("position", -1)
+            val editedProducto = data?.getSerializableExtra("editedProducto") as? Lista_Compras
+
+            if (position != null && editedProducto != null && position != -1) {
+                ListaComprasSingleton.getList()[position] = editedProducto
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 
+
+
     companion object {
         const val REQUEST_CODE_PRODUCTO_AGREGADO = 1
-    }
-
-    private fun deleteItem(Position: Int) {
-        ListaComprasSingleton.getList().removeAt(Position)
-        adapter.notifyDataSetChanged()
+        const val REQUEST_CODE_EDIT_PRODUCTO = 2
     }
 
 }
