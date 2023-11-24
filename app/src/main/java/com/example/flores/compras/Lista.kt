@@ -19,7 +19,7 @@ class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Agregar_producto
 
-    private lateinit var itemTouchHelper: ItemTouchHelper
+    //private lateinit var itemTouchHelper: ItemTouchHelper
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
