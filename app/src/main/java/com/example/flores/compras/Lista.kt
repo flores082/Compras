@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flores.compras.adapter.Agregar_producto
@@ -18,7 +19,7 @@ class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Agregar_producto
 
-    //private lateinit var itemTouchHelper: ItemTouchHelper
+    private lateinit var itemTouchHelper: ItemTouchHelper
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
