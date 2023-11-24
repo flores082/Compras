@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Purchases</string>
-    <string name="producto">Product:</string>
-    <string name="precio">Price:</string>
+    <string name="producto">Product</string>
+    <string name="precio">Price</string>
     <string name="cantidad">Quantity:</string>
     <string name="comprar">Buy</string>
     <string name="estanteria">Shelf</string>
@@ -10,14 +11,14 @@
     <string name="guardar">Save</string>
     <string name="cambiar">Change language</string>
     <string name="agregar">Add</string>
-    <string name="lista">go to list</string>
+    <string name="lista">List</string>
     <string name="editar">Edit</string>
-    <string name="marca">Brand:</string>
-    <string name="tipo">Guy</string>
-    <string name="eleccion">Stocked/Buy</string>
-    <string name="presentacion">Hello, good,
+    <string name="marca">Brand</string>
+    <string name="tipo">Type</string>
+    <string name="eleccion">Stock/Buy</string>
+    <string name="presentacion">Hello, hello,
         thank you for using the application and remember
-        the characteristics that are given in the background.</string>
-    <string name="verde">-> Brand that has to be bought</string>
-    <string name="rojo">-> Mark that is on the shelf</string>
+        the characteristics that are given to the background.</string>
+    <string name="verde">-> Brand that has to be purchased</string>
+    <string name="rojo">-> Brand that is on the shelf</string>
 </resources>

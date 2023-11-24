@@ -1,18 +1,13 @@
 package com.example.flores.compras.adapter
 
-import android.database.DataSetObserver
-import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flores.compras.R
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ListAdapter
 import android.widget.Switch
-import android.widget.Toast
+import com.example.flores.compras.R
 
 data class Lista_Compras(
     val producto: String,
@@ -42,7 +37,7 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>):
     inner class ProductoViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val imageViewProducto = itemView.findViewById<ImageView>(R.id.imageView3)
         val colorSwitch = itemView.findViewById<Switch>(R.id.switch1)
-        fun bin(producto:Lista_Compras) {
+        fun bin(producto: Lista_Compras) {
             itemView.findViewById<TextView>(R.id.textView).text = producto.producto
             itemView.findViewById<TextView>(R.id.textView6).text = producto.precio
             itemView.findViewById<TextView>(R.id.textView7).text = producto.cantidad
