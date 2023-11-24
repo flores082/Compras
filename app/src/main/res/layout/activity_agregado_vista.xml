@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/Red">
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -18,12 +19,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/eleccion" />
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="107dp"
+            android:layout_marginTop="20dp"
+            tools:srcCompat="@drawable/baseline_emoji_food_beverage_24" />
+
     </LinearLayout>
 
     <LinearLayout

@@ -15,4 +15,10 @@
     <string name="editar">Editar</string>
     <string name="marca">Marca</string>
     <string name="tipo">Tipo</string>
+    <string name="eleccion">Almacenado/Comprar</string>
+    <string name="presentacion">Hola, buenas,
+        gracias por ocupar la aplicación y recuerda
+        las características que se dan al fondo.</string>
+    <string name="verde">-> Marca que tiene que comprarse</string>
+    <string name="rojo">-> Marca que esta en el estante</string>
 </resources>
