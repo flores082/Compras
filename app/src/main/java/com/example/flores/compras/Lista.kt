@@ -29,6 +29,11 @@ class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
     private lateinit var editTextSearch: EditText
     private lateinit var buttonSearch: Button
     companion object {
+        fun cargarDesdeSharedPreferences(context: Context): Int {
+            val sharedPreferences = context.getSharedPreferences("MiInventarioPrefs", Context.MODE_PRIVATE)
+            return sharedPreferences.getInt("contador_elementos", 0)
+        }
+
         const val REQUEST_CODE_PRODUCTO_AGREGADO = 1
         const val REQUEST_CODE_EDIT_PRODUCTO = 2
     }
@@ -67,7 +72,7 @@ class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
         }
     }
 
-    private fun cargarDesdeSharedPreferences() {
+    fun cargarDesdeSharedPreferences() {
 
         val sharedPreferences = getSharedPreferences("MiInventarioPrefs", Context.MODE_PRIVATE)
         val listaJsonGuardada = sharedPreferences.getString("lista_compras", null)
@@ -157,9 +162,6 @@ class Lista : AppCompatActivity(), Producto_agregado.ListaChangeListener {
 
             R.id.menu_agregar -> {
                 Inicio.contadorElementos++
-                if(Inicio.contadorElementos<0){
-                    Inicio.contadorElementos=0
-                }
                 val intent = Intent(this@Lista, Producto_agregado::class.java)
                 startActivityForResult(intent, REQUEST_CODE_PRODUCTO_AGREGADO)
                 return true

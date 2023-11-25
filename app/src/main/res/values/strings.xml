@@ -26,4 +26,6 @@
     <string name="buscar">Buscar</string>
     <string name="b">Datos guardados exitosamente</string>
     <string name="CP">Cantidad de producto:</string>
+    <string name="AL">Productos Almacenados:</string>
+    <string name="COM">Productos a Comprar:</string>
 </resources>

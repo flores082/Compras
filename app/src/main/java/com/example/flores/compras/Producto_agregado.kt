@@ -1,7 +1,6 @@
 package com.example.flores.compras
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
@@ -43,7 +42,7 @@ class Producto_agregado : AppCompatActivity() {
             val cantidad = "Cantidad: " + cantidadEditText.text.toString()
             val marca = "Marca: " + marcaEditText.text.toString()
 
-            val item = Lista_Compras(producto, precio, cantidad, marca, cambio)
+            val item = Lista_Compras(producto, precio, cantidad, marca, cambio, true)
             Lista.ListaComprasSingleton.addToList(item)
 
             val intent = Intent()

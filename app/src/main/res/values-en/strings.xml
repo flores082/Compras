@@ -26,4 +26,6 @@
     <string name="buscar">Look for</string>
     <string name="b">Data saved successfully</string>
     <string name="CP">Product quantity:</string>
+    <string name="AL">Stored Products:</string>
+    <string name="COM">Products to Buy:</string>
 </resources>

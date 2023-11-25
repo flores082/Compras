@@ -16,10 +16,7 @@ import com.example.flores.compras.Producto_agregado
 import com.example.flores.compras.R
 import java.io.Serializable
 import java.util.Collections
-import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import com.example.flores.compras.Inicio
-import com.google.gson.Gson
 import kotlin.coroutines.coroutineContext
 
 data class Lista_Compras(
@@ -27,7 +24,8 @@ data class Lista_Compras(
     val precio: String,
     val cantidad: String,
     val marca: String,
-    var cambio: Int
+    var cambio: Int,
+    var isSwitchChecked: Boolean
 ): Serializable
 
 class Agregar_producto(private val LC: MutableList<Lista_Compras>):
@@ -61,6 +59,13 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>):
             itemView.findViewById<TextView>(R.id.textView6).text = producto.precio
             itemView.findViewById<TextView>(R.id.textView7).text = producto.cantidad
             itemView.findViewById<TextView>(R.id.textView8).text = producto.marca
+
+            if(producto.isSwitchChecked){
+                itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Green))
+            }else
+            {
+                itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Red))
+            }
 
             when (producto.cambio) {
                 0 -> imageViewProducto.setImageResource(R.drawable.baseline_emoji_objects_24)
@@ -97,11 +102,14 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>):
                 }
             }
 
+            colorSwitch.isChecked = producto.isSwitchChecked
+
             colorSwitch.setOnCheckedChangeListener { _, isChecked ->
+                producto.isSwitchChecked = isChecked
                 if(isChecked){
                     itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Green))
                 }
-                else{
+                else {
                     itemView.setBackgroundColor(itemView.context.resources.getColor(R.color.Red))
                 }
             }

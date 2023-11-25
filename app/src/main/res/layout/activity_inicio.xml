@@ -76,8 +76,8 @@
 
         <TextView
             android:id="@+id/Muestra_cantidad"
-            android:layout_width="260dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -85,7 +85,37 @@
             android:layout_marginStart="69dp"
             android:layout_marginTop="285dp"
             android:layout_marginEnd="81dp"
-            android:layout_marginBottom="353dp"
+            android:layout_marginBottom="376dp"
+            android:gravity="center"
+            android:text="@string/CP" />
+
+        <TextView
+            android:id="@+id/Almacenado"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="506dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginBottom="160dp"
+            android:gravity="center"
+            android:text="@string/CP" />
+
+        <TextView
+            android:id="@+id/Comprar"
+            android:layout_width="wrap_content"
+            android:layout_height="63dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="578dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="90dp"
             android:gravity="center"
             android:text="@string/CP" />
 

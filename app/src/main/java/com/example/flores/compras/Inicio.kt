@@ -17,20 +17,30 @@ class Inicio : AppCompatActivity() {
 
     companion object {
         lateinit var Elementos: TextView
+        lateinit var ElementosAComprar: TextView
+        lateinit var ElementosAlMacenados: TextView
         var contadorElementos: Int = 0
+        var Almacenado: Int = 0
+        var Comprar: Int = 0
     }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
+        Lista.cargarDesdeSharedPreferences(this)
+
         mediaPlayer = MediaPlayer.create(this, R.raw.precionar)
         Elementos = findViewById<TextView>(R.id.Muestra_cantidad)
+        ElementosAComprar = findViewById<TextView>(R.id.Comprar)
+        ElementosAlMacenados = findViewById<TextView>(R.id.Almacenado)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        Elementos.text= getString(R.string.CP) + contadorElementos.toString()
+        Elementos.text = getString(R.string.CP) + contadorElementos.toString()
+        ElementosAComprar.text = getString(R.string.COM) + Almacenado.toString()
+        ElementosAlMacenados.text = getString(R.string.AL) + Comprar.toString()
     }
 
     @SuppressLint("ResourceType")
