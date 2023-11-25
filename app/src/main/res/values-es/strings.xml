@@ -23,4 +23,7 @@
     <string name="rojo">-> Marca que esta en el estante</string>
     <string name="arriba">Arriba</string>
     <string name="abajo">Abajo</string>
+    <string name="buscar">Buscar</string>
+    <string name="b">Datos guardados exitosamente</string>
+    <string name="CP">Cantidad de producto:</string>
 </resources>

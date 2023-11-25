@@ -16,6 +16,11 @@ import com.example.flores.compras.Producto_agregado
 import com.example.flores.compras.R
 import java.io.Serializable
 import java.util.Collections
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import com.example.flores.compras.Inicio
+import com.google.gson.Gson
+import kotlin.coroutines.coroutineContext
 
 data class Lista_Compras(
     val producto: String,
@@ -68,6 +73,10 @@ class Agregar_producto(private val LC: MutableList<Lista_Compras>):
             }
 
             deleteButton.setOnClickListener {
+                Inicio.contadorElementos--
+                if(Inicio.contadorElementos<0){
+                    Inicio.contadorElementos=0
+                }
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     Lista.ListaComprasSingleton.getList().removeAt(position)

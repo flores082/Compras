@@ -23,4 +23,7 @@
     <string name="rojo">-> Brand that is on the shelf</string>
     <string name="arriba">Up</string>
     <string name="abajo">Down</string>
+    <string name="buscar">Look for</string>
+    <string name="b">Data saved successfully</string>
+    <string name="CP">Product quantity:</string>
 </resources>

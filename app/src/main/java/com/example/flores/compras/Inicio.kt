@@ -8,20 +8,29 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 
 class Inicio : AppCompatActivity() {
 
     private lateinit var mediaPlayer: MediaPlayer
+
+    companion object {
+        lateinit var Elementos: TextView
+        var contadorElementos: Int = 0
+    }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.precionar)
+        Elementos = findViewById<TextView>(R.id.Muestra_cantidad)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        Elementos.text= getString(R.string.CP) + contadorElementos.toString()
     }
 
     @SuppressLint("ResourceType")
