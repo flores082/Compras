@@ -8,7 +8,7 @@ Diagrama:https://lucid.app/lucidchart/6ee7de5e-5953-40c8-85ca-c785f6d68930/edit?
 
 Presentación: https://docs.google.com/presentation/d/1K6eeOZGSIsi21izRP94eDS0AdPL04BhRZuExR10kv9o/edit?usp=sharing
 
-Video:
+Video:https://www.youtube.com/watch?v=XzYjfvmjazM
 
 APK: https://drive.google.com/drive/folders/1JLkyorjjVu9IhS5uGNiKpxo4504enSk1?usp=sharing
 
